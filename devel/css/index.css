@@ -448,6 +448,7 @@ body {
 ul, ol {
   margin: 0; }
 
+svg,
 img {
   max-width: 100%; }
 
@@ -466,7 +467,8 @@ img {
       right: 0; } }
 
 .header {
-  border-bottom: 1px solid red; }
+  border-bottom: 1px solid red;
+  color: #fff; }
   @media screen and (min-width: 768px) {
     .header {
       top: 0; } }
@@ -478,10 +480,12 @@ img {
       bottom: 0; } }
 
 .aside {
-  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5) url(../images/arrowCenter.svg) right center no-repeat;
+  background-size: contain;
+  padding-right: 1rem; }
   @media screen and (min-width: 768px) {
     .aside {
       display: inline-block;
@@ -493,15 +497,7 @@ img {
   text-align: right;
   height: 100%;
   overflow: hidden;
-  position: relative;
-  background: url(https://image.flaticon.com/icons/svg/60/60758.svg) 70% center no-repeat;
-  background-size: 20%; }
-
-.drag.nav__arrow_prev {
-  background-position: 80% top; }
-
-.drag.nav__arrow_next {
-  background-position: 80% bottom; }
+  position: relative; }
 
 .nav__arrow {
   width: 100px;
@@ -511,17 +507,24 @@ img {
   z-index: 999;
   background-repeat: no-repeat;
   background-size: 50%;
-  transition-duration: 400ms; }
+  transition-duration: 400ms;
+  fill: #fff; }
+  .nav__arrow svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%; }
 
 .nav__arrow_prev {
-  top: 0;
-  background-position: 80% bottom;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Arrow_top_svg.svg/768px-Arrow_top_svg.svg.png); }
+  top: 0; }
+  .nav__arrow_prev svg {
+    bottom: 0; }
 
 .nav__arrow_next {
-  bottom: 0;
-  background-position: 80% top;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Arrow_bottom_svg.svg/2000px-Arrow_bottom_svg.svg.png); }
+  bottom: 0; }
+  .nav__arrow_next svg {
+    top: 0; }
 
 .nav__list {
   position: relative;

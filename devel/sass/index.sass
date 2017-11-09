@@ -35,8 +35,10 @@ body
   box-sizing: border-box
 ul,ol
   margin: 0
+svg,
 img
   max-width: 100%
+
 //////////////////////////////////////////////
 //header footer
 //////////////////////////////////////////////
@@ -54,6 +56,7 @@ img
     right: 0
 .header
   border-bottom: 1px solid red
+  color: #fff
   +respond($sm)
     top: 0
 .footer
@@ -66,10 +69,13 @@ img
 //////////////////////////////////////////////
 .aside
   @extend %font_true
-  background-color: rgba(#000000, 0.5)
+  // background-color: rgba(#000000, 0.5)
   color: #fff
   position: relative
   overflow: hidden
+  background: rgba(#000000, 0.5) url(../images/arrowCenter.svg) right center no-repeat
+  background-size: contain
+  padding-right: 1rem
   +respond($sm)
     display: inline-block
     vertical-align: top
@@ -80,13 +86,6 @@ img
   height: 100%
   overflow: hidden
   position: relative
-  background: url(https://image.flaticon.com/icons/svg/60/60758.svg) 70% center no-repeat
-  background-size: 20%
-.drag
-  &.nav__arrow_prev
-    background-position: 80% top
-  &.nav__arrow_next
-    background-position: 80% bottom
 .nav__arrow
   width: 100px
   height: 115px
@@ -97,14 +96,21 @@ img
   background-repeat: no-repeat
   background-size: 50%
   transition-duration: 400ms
+  fill: #fff
+  svg
+    position: absolute
+    left: 0
+    right: 0
+    margin: auto
+    width: 50%
 .nav__arrow_prev
   top: 0
-  background-position: 80% bottom
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Arrow_top_svg.svg/768px-Arrow_top_svg.svg.png)
+  svg
+    bottom: 0
 .nav__arrow_next
   bottom: 0
-  background-position: 80% top
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Arrow_bottom_svg.svg/2000px-Arrow_bottom_svg.svg.png)
+  svg
+    top: 0
 .nav__list
   position: relative
   text-align: right
